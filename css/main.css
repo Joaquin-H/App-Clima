@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --var-clr-primary: #ffffff;
+    --var-clr-secondary: #2a3344;
+    --var-clr-secondary-c: #666b88;
+    --var-clr-letra: #161617;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 55px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--var-clr-secondary);
+}
+
+.container{
+    position: relative;
+    width: 450px ;
+    height: 90px ;
+    background-color: var(--var-clr-secondary-c);
+    padding: 28px 32px;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.5s ease-out;
+}
+
+.ubi{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px ;
+    height: 50px ;
+    opacity: 0.3;
+}
+
+.ubi:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.ubi p{
+    color: var(--var-clr-primary);
+    font-size: 18px;
+}
+
+.ubi .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 15px;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    background-color: var(--var-clr-primary);
+    cursor: pointer;
+    transition:  0.2s ease-in-out;
+    opacity: 0.7;
+    border-radius: 100vh;
+}
+
+.ubi .btn img{
+    width: 30%;
+}
+
+/*Seccion busqueda*/
+
+.busqueda-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.busqueda-box input{
+    color: var(--var-clr-letra);
+    background-color: var(--var-clr-primary);
+    width: 80%;
+    height: 35px;
+    font-size: 18px;
+    padding-left: 32px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px ;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.busqueda-box input::placeholder{
+    color: var(--var-clr-letra);
+    opacity: 0.7;
+    text-transform: capitalize;
+}
+.busqueda-box img{
+    width: 25px;
+    height: 25px;
+}
+.busqueda-box .location{
+    margin-right: 18px;
+    filter: invert(0%) sepia(10%) saturate(389%) hue-rotate(331deg) brightness(98%) contrast(87%);
+}
+
+.busqueda-box .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px ;
+    width: 30px;
+    height: 35px;
+    background-color: var(--var-clr-letra);
+    cursor: pointer;
+    transition:  0.2s ease-in-out;
+    opacity: 0.7;
+}
+
+.busqueda-box .btn img{
+    margin-right: 5px;
+    width: 50%;
+    filter: invert(75%) sepia(49%) saturate(163%) hue-rotate(203deg) brightness(92%) contrast(90%);
+}
+
+.busqueda-box .btn:hover{
+    opacity: 1;
+}
+
+/*Clima Detalles*/
+
+.clima-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1.5rem;
+    margin-top: 2.5rem;
+}
+
+.clima-box img{
+    width: 8rem;
+}
+
+.clima-box .temperatura{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--var-clr-letra);
+}
+
+.clima-box .descripcion{
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--var-clr-letra);
+}
+
+.detalles-clima{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    color: var(--var-clr-letra);
+}
+
+.detalles-clima img{
+    width: 32px;
+    height: 32px;
+    filter: invert(0%) sepia(10%) saturate(389%) hue-rotate(331deg) brightness(98%) contrast(87%);
+}
+
+.detalles-clima p{
+    font-size: 1.4rem;
+}
+
+.detalles-clima .humedad, .detalles-clima .viento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--var-clr-letra);
+}
+
+.not-found{
+    height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    scale: 0;
+    opacity: 0;
+}
+
+.not-found img{
+    width: 11rem;
+    height: 11rem;
+    opacity: 0.8;
+}
+
+.not-found p{
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0.8;
+    color: var(--var-clr-letra);
+}
+
+.clima-box, .detalles-clima{
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay:  0.5s;
+}
+
+@keyframes fadeIn {
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+    
+}
+
+@media (max-width: 490px){
+    .container{
+        position: relative;
+        width: 300px ;
+        height: 90px ;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--var-clr-secondary-c);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: 0.5s ease-out;
+    }
+
+    .busqueda-box{
+        width: 100%;
+        height: min-content;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+    }
+
+    .busqueda-box input{
+        color: var(--var-clr-letra);
+        background-color: var(--var-clr-primary);
+        width: 100%;
+        height: 35px;
+        font-size: 16px;
+        border-top-left-radius: 28px;
+        border-bottom-left-radius: 28px ;
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+
+    .busqueda-box input::placeholder{
+        color: var(--var-clr-letra);
+        opacity: 0.7;
+        text-transform: capitalize;
+    }
+    .busqueda-box img{
+        width: 25px;
+        height: 25px;
+    }
+    .busqueda-box .location{
+        display: none;
+    }
+
+    .ubi{
+        display: flex;
+        width: 80px;
+        height: 10px;
+        opacity: 0.3;
+        padding: 20px;
+    }
+    
+    .ubi .btn{
+        display: flex;
+        min-width: 100%;
+        left: 0;
+        background-color: transparent;
+    }
+
+    .ubi .btn img{
+        width: 50%;
+    }
+
+    .ubi p{
+        display: none;
+    }
+
+    
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Web Clima</title>
+</head>
+<body>
+    <div class="container">
+        <div class="busqueda-box">
+            <img class="location" src="./img/locacion.svg" alt="marker">
+            <input type="text" placeholder="Ingresa una ubicacion">
+            <button class="btn">
+                <img src="./img/lupa.svg" alt="busqueda">
+            </button>
+        </div>
+        <div class="not-found">
+            <img src="./img/error.png" alt="error">
+            <p>Ubicacion no encontrada</p>
+        </div>
+        <div class="clima-box">
+            <img src="./img/dia.png">
+            <p class="temperatura"></p>
+            <span class="descripcion">Soleado</span>
+        </div>
+        <div class="detalles-clima">
+            <div class="humedad">
+                <img src="./img/humedad.png" alt="humedad">
+                <p></p>
+            </div>
+            <div class="viento">
+                <img src="./img/viento-dia.png" alt="viento">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="container ubi">
+        <p>Tu ubicacion Actual</p>
+        <button class="btn">
+            <img src="./img/locacion.svg" alt="ubicacion">
+        </button>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+</html>
